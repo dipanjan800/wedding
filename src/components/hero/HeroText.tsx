@@ -59,7 +59,7 @@ export default function HeroText() {
           className="font-sans font-light uppercase tracking-[0.42em] text-[#D4AF37]/65"
           style={{ fontSize: "10px", letterSpacing: "0.42em" }}
         >
-          India &amp; Worldwide
+          India {"&"} Worldwide
         </span>
         <span className="w-14 h-px bg-gradient-to-l from-transparent to-[#D4AF37]/60" />
       </motion.div>

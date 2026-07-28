@@ -12,13 +12,30 @@ interface CategoryFilterProps {
 export default function CategoryFilter({ active, onChange }: CategoryFilterProps) {
   const [hovered, setHovered] = useState<ProjectCategory | null>(null);
 
+  const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
+    let nextIndex = index;
+    if (e.key === "ArrowRight") {
+      nextIndex = (index + 1) % ALL_CATEGORIES.length;
+    } else if (e.key === "ArrowLeft") {
+      nextIndex = (index - 1 + ALL_CATEGORIES.length) % ALL_CATEGORIES.length;
+    } else if (e.key === "Home") {
+      nextIndex = 0;
+    } else if (e.key === "End") {
+      nextIndex = ALL_CATEGORIES.length - 1;
+    } else {
+      return;
+    }
+    e.preventDefault();
+    onChange(ALL_CATEGORIES[nextIndex]);
+  };
+
   return (
     <div
       className="relative flex items-center flex-wrap gap-1.5 py-1"
       role="tablist"
       aria-label="Filter projects by category"
     >
-      {ALL_CATEGORIES.map((cat) => {
+      {ALL_CATEGORIES.map((cat, i) => {
         const isActive = cat === active;
         const isHovered = hovered === cat && !isActive;
 
@@ -27,7 +44,9 @@ export default function CategoryFilter({ active, onChange }: CategoryFilterProps
             key={cat}
             role="tab"
             aria-selected={isActive}
+            tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(cat)}
+            onKeyDown={(e) => handleKeyDown(e, i)}
             onMouseEnter={() => setHovered(cat)}
             onMouseLeave={() => setHovered(null)}
             className="relative flex-shrink-0 focus-visible:outline-none"

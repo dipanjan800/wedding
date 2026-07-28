@@ -238,10 +238,15 @@ export default function BookingSection() {
                           placeholder=" "
                           className="lux-input"
                           value={formData.brideName}
-                          onChange={(e) => setFormData({ ...formData, brideName: e.target.value })}
+                          aria-invalid={Boolean(errors.brideName)}
+                          aria-describedby={errors.brideName ? "brideName-error" : undefined}
+                          onChange={(e) => {
+                            setFormData({ ...formData, brideName: e.target.value });
+                            if (errors.brideName) setErrors((prev) => ({ ...prev, brideName: undefined }));
+                          }}
                         />
                         <label htmlFor="brideName" className="lux-label">Bride's Name *</label>
-                        {errors.brideName && <span className="text-[10px] text-red-400 mt-1 block">{errors.brideName}</span>}
+                        {errors.brideName && <span id="brideName-error" className="text-[10px] text-red-400 mt-1 block">{errors.brideName}</span>}
                       </div>
 
                       <div className="lux-field">
@@ -266,10 +271,15 @@ export default function BookingSection() {
                           placeholder=" "
                           className="lux-input"
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          aria-invalid={Boolean(errors.email)}
+                          aria-describedby={errors.email ? "email-error" : undefined}
+                          onChange={(e) => {
+                            setFormData({ ...formData, email: e.target.value });
+                            if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
+                          }}
                         />
                         <label htmlFor="email" className="lux-label">Email Address *</label>
-                        {errors.email && <span className="text-[10px] text-red-400 mt-1 block">{errors.email}</span>}
+                        {errors.email && <span id="email-error" className="text-[10px] text-red-400 mt-1 block">{errors.email}</span>}
                       </div>
 
                       <div className="lux-field">
@@ -279,10 +289,15 @@ export default function BookingSection() {
                           placeholder=" "
                           className="lux-input"
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          aria-invalid={Boolean(errors.phone)}
+                          aria-describedby={errors.phone ? "phone-error" : undefined}
+                          onChange={(e) => {
+                            setFormData({ ...formData, phone: e.target.value });
+                            if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
+                          }}
                         />
                         <label htmlFor="phone" className="lux-label">Phone / WhatsApp *</label>
-                        {errors.phone && <span className="text-[10px] text-red-400 mt-1 block">{errors.phone}</span>}
+                        {errors.phone && <span id="phone-error" className="text-[10px] text-red-400 mt-1 block">{errors.phone}</span>}
                       </div>
                     </div>
 
@@ -295,10 +310,15 @@ export default function BookingSection() {
                           placeholder=" "
                           className="lux-input"
                           value={formData.weddingDate}
-                          onChange={(e) => setFormData({ ...formData, weddingDate: e.target.value })}
+                          aria-invalid={Boolean(errors.weddingDate)}
+                          aria-describedby={errors.weddingDate ? "weddingDate-error" : undefined}
+                          onChange={(e) => {
+                            setFormData({ ...formData, weddingDate: e.target.value });
+                            if (errors.weddingDate) setErrors((prev) => ({ ...prev, weddingDate: undefined }));
+                          }}
                         />
                         <label htmlFor="weddingDate" className="lux-label">Wedding Date *</label>
-                        {errors.weddingDate && <span className="text-[10px] text-red-400 mt-1 block">{errors.weddingDate}</span>}
+                        {errors.weddingDate && <span id="weddingDate-error" className="text-[10px] text-red-400 mt-1 block">{errors.weddingDate}</span>}
                       </div>
 
                       <div className="lux-field">
@@ -308,10 +328,15 @@ export default function BookingSection() {
                           placeholder=" "
                           className="lux-input"
                           value={formData.weddingLocation}
-                          onChange={(e) => setFormData({ ...formData, weddingLocation: e.target.value })}
+                          aria-invalid={Boolean(errors.weddingLocation)}
+                          aria-describedby={errors.weddingLocation ? "weddingLocation-error" : undefined}
+                          onChange={(e) => {
+                            setFormData({ ...formData, weddingLocation: e.target.value });
+                            if (errors.weddingLocation) setErrors((prev) => ({ ...prev, weddingLocation: undefined }));
+                          }}
                         />
                         <label htmlFor="weddingLocation" className="lux-label">Wedding Location / Venue *</label>
-                        {errors.weddingLocation && <span className="text-[10px] text-red-400 mt-1 block">{errors.weddingLocation}</span>}
+                        {errors.weddingLocation && <span id="weddingLocation-error" className="text-[10px] text-red-400 mt-1 block">{errors.weddingLocation}</span>}
                       </div>
                     </div>
 

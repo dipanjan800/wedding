@@ -13,7 +13,7 @@ export default function HeroCTA() {
     >
       {/* ── Primary CTA — ghost button with liquid gold fill ── */}
       <Link
-        href="/contact"
+        href="/#booking"
         id="hero-cta-primary"
         className="group relative overflow-hidden flex items-center px-8 py-[14px] rounded-full border border-[#D4AF37]/45 hover:border-[#D4AF37]/80 transition-colors duration-700"
       >
@@ -45,7 +45,7 @@ export default function HeroCTA() {
 
       {/* ── Secondary text link ── */}
       <Link
-        href="/films"
+        href="/#films"
         id="hero-cta-secondary"
         className="group relative flex items-center gap-3"
       >

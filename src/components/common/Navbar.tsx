@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Wedding", href: "/wedding" },
-  { label: "Pre Wedding", href: "/pre-wedding" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Films", href: "/films" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "/#about" },
+  { label: "Weddings", href: "/#weddings" },
+  { label: "Pre-Wedding", href: "/#pre-wedding" },
+  { label: "Films", href: "/#films" },
+  { label: "Instagram", href: "/#instagram" },
+  { label: "Contact", href: "/#booking" },
 ];
 
 /**
@@ -74,6 +74,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -16 }}
@@ -130,7 +142,7 @@ export default function Navbar() {
 
         {/* ── Inquire CTA ── */}
         <Link
-          href="/contact"
+          href="/#booking"
           id="nav-inquire"
           className="hidden lg:inline-flex items-center px-5 py-[9px] rounded-full border border-white/15 text-white/55 font-sans font-light uppercase hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition-all duration-500"
           style={{ fontSize: "10px", letterSpacing: "0.22em" }}

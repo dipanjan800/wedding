@@ -119,13 +119,6 @@ export default function HeroVideoScrubber({ videoSrc }: HeroVideoScrubberProps) 
           />
         </>
       )}
-
-      <style>{`
-        @keyframes pulse-orb {
-          0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-          50%        { opacity: 1;   transform: translate(-50%, -50%) scale(1.12); }
-        }
-      `}</style>
     </div>
   );
 }

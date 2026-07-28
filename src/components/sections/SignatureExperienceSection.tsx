@@ -388,7 +388,7 @@ function SignatureCTA() {
       </p>
 
       <a
-        href="/contact"
+        href="/#booking"
         className="group flex items-center gap-4 font-sans font-light uppercase"
         style={{ fontSize: "11px", letterSpacing: "0.22em", color: "rgba(212,175,55,0.7)" }}
       >
