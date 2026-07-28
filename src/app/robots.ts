@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://royalvowscinema.com/sitemap.xml",
+    sitemap: "https://wedding1-azure.vercel.app/sitemap.xml",
   };
 }

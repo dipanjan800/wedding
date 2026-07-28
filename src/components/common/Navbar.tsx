@@ -150,11 +150,12 @@ export default function Navbar() {
           Inquire
         </Link>
 
-        {/* ── Mobile hamburger ── */}
+        {/* ── Mobile hamburger (strictly hidden on desktop) ── */}
         <button
-          className="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8"
+          className="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8 focus-visible:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
         >
           <span
             className={cn(
@@ -177,7 +178,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* ── Mobile drawer ── */}
+      {/* ── Mobile drawer (strictly hidden on desktop) ── */}
       <motion.div
         initial={false}
         animate={{ height: menuOpen ? "auto" : 0, opacity: menuOpen ? 1 : 0 }}

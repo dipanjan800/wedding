@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { PROJECTS } from "@/lib/portfolio-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://royalvowscinema.com";
+  const baseUrl = "https://wedding1-azure.vercel.app";
 
   const projectRoutes: MetadataRoute.Sitemap = PROJECTS.map((project) => ({
     url: `${baseUrl}/wedding/${project.slug}`,

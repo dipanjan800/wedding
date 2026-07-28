@@ -23,7 +23,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://royalvowscinema.com"),
+  metadataBase: new URL("https://wedding1-azure.vercel.app"),
   title: "Royal Vows Cinema — Luxury Indian Wedding Photography & Films",
   description:
     "Award-winning luxury Indian wedding photography and cinematic filmmaking. We craft timeless love stories through the art of editorial photography and cinematic storytelling. India & Worldwide.",
@@ -66,7 +66,7 @@ const jsonLd = [
     name: "Royal Vows Cinema",
     description:
       "Award-winning luxury Indian wedding photography and cinematic filmmaking studio.",
-    url: "https://royalvowscinema.com",
+    url: "https://wedding1-azure.vercel.app",
     foundingDate: "2014",
     areaServed: "Worldwide",
     knowsAbout: [
@@ -85,7 +85,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Royal Vows Cinema Atelier",
-    image: "https://royalvowscinema.com/og-image.jpg",
+    image: "https://wedding1-azure.vercel.app/og-image.jpg",
     telephone: "+91 98765 43210",
     email: "concierge@royalvowscinema.com",
     address: {
@@ -101,7 +101,7 @@ const jsonLd = [
       latitude: "28.5954",
       longitude: "77.1729",
     },
-    url: "https://royalvowscinema.com",
+    url: "https://wedding1-azure.vercel.app",
     priceRange: "$$$$",
   },
 ];
