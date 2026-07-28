@@ -15,7 +15,7 @@ export default function HeroCTA() {
       <Link
         href="/#booking"
         id="hero-cta-primary"
-        className="group relative overflow-hidden flex items-center justify-center min-h-[44px] px-9 py-[14px] rounded-full border border-[#D4AF37]/45 hover:border-[#D4AF37]/80 active:scale-[0.98] transition-all duration-700"
+        className="group relative overflow-hidden inline-flex items-center justify-center min-h-[48px] px-11 py-[15px] rounded-full border border-[#D4AF37]/50 hover:border-[#D4AF37]/90 active:scale-[0.98] transition-all duration-700 whitespace-nowrap"
       >
         {/*
          * Liquid fill — starts at 0% height from bottom, floods to 100% on hover.
@@ -33,8 +33,8 @@ export default function HeroCTA() {
         <span className="absolute inset-0 -z-10 rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-[#D4AF37]" />
 
         <span
-          className="relative font-sans font-light uppercase tracking-[0.2em] text-[#D4AF37] group-hover:text-[#08080A] transition-colors duration-500"
-          style={{ fontSize: "11px" }}
+          className="relative font-sans font-light uppercase tracking-[0.2em] text-[#D4AF37] group-hover:text-[#08080A] transition-colors duration-500 mr-[-0.2em]"
+          style={{ fontSize: "11px", lineHeight: 1 }}
         >
           Book Your Story
         </span>
