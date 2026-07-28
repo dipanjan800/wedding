@@ -267,10 +267,10 @@ function SignatureHeading() {
 
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
         <h2
-          className="font-serif font-light"
+          className="font-serif font-light pb-2"
           style={{
             fontSize: "clamp(2rem, 4vw, 3.8rem)",
-            lineHeight: 1.05,
+            lineHeight: 1.15,
             letterSpacing: "-0.02em",
             color: "#F7F6F3",
             maxWidth: "560px",
@@ -281,6 +281,10 @@ function SignatureHeading() {
             style={{
               fontStyle: "italic",
               fontWeight: 400,
+              display: "inline-block",
+              paddingBottom: "0.25em",
+              marginBottom: "-0.25em",
+              paddingRight: "0.05em",
               background:
                 "linear-gradient(110deg, #B8962E, #D4AF37 45%, #F0D697 65%, #D4AF37)",
               WebkitBackgroundClip: "text",
