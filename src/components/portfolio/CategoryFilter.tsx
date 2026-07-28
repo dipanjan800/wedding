@@ -49,9 +49,10 @@ export default function CategoryFilter({ active, onChange }: CategoryFilterProps
             onKeyDown={(e) => handleKeyDown(e, i)}
             onMouseEnter={() => setHovered(cat)}
             onMouseLeave={() => setHovered(null)}
-            className="relative flex-shrink-0 focus-visible:outline-none"
+            className="relative flex-shrink-0 inline-flex items-center justify-center focus-visible:outline-none active:scale-[0.97]"
             style={{
-              padding: "6px 16px",
+              padding: "8px 18px",
+              minHeight: "44px",
               fontSize: "9.5px",
               letterSpacing: "0.22em",
               fontFamily: "var(--font-sans)",
@@ -62,9 +63,9 @@ export default function CategoryFilter({ active, onChange }: CategoryFilterProps
               color: isActive
                 ? "#08080A"
                 : isHovered
-                ? "rgba(247,246,243,0.75)"
-                : "rgba(247,246,243,0.32)",
-              transition: "color 0.35s cubic-bezier(0.16,1,0.3,1)",
+                ? "rgba(247,246,243,0.85)"
+                : "rgba(247,246,243,0.45)",
+              transition: "color 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.15s ease",
               zIndex: 1,
             }}
           >

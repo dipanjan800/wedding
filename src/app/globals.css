@@ -151,12 +151,25 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   FOCUS VISIBLE — Accessibility
+   FOCUS VISIBLE & TACTILE INTERACTION — Accessibility & Micro-Feedback
 ───────────────────────────────────────────────────────────────── */
 :focus-visible {
   outline: 1.5px solid var(--color-gold);
   outline-offset: 4px;
-  border-radius: 2px;
+  border-radius: 4px;
+}
+
+/* Tactile button active scale & minimum touch target (WCAG 2.2 AA) */
+button,
+a[role="button"],
+.btn-touch {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+button:active,
+a:active {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ─────────────────────────────────────────────────────────────────
