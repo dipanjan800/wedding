@@ -1,0 +1,16 @@
+Place your cinematic wedding video file here:
+
+  Filename: hero-cinematic.mp4
+  Path:     /public/video/hero-cinematic.mp4
+
+Requirements:
+  - Format: MP4 (H.264)
+  - Duration: 10 seconds
+  - Resolution: 1920×1080 minimum (4K preferred)
+  - The video should be self-contained (no audio needed as it is scroll-scrubbed)
+
+GSAP ScrollTrigger will scrub currentTime from 0s → full duration
+based on the user's scroll progress through the 300vh hero container.
+
+For production, also provide:
+  - hero-cinematic.webm  (VP9, smaller file size for modern browsers)
