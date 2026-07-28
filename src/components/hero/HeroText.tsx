@@ -126,7 +126,7 @@ export default function HeroText() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.8, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="font-sans font-light text-white/40 leading-[1.75] max-w-[400px]"
+        className="font-sans font-light text-white/40 leading-[1.75] max-w-[440px] mb-8"
         style={{ fontSize: "clamp(0.9rem, 1.1vw, 1.08rem)", letterSpacing: "0.025em" }}
       >
         Crafting timeless Indian love stories through cinematic photography and filmmaking.

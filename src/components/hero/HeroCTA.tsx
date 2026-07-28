@@ -9,13 +9,14 @@ export default function HeroCTA() {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 2.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="relative z-10 flex flex-col sm:flex-row items-center gap-5 sm:gap-6 mt-11"
+      className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6 mt-4"
     >
       {/* ── Primary CTA — ghost button with liquid gold fill ── */}
       <Link
         href="/#booking"
         id="hero-cta-primary"
-        className="group relative overflow-hidden inline-flex items-center justify-center min-h-[48px] px-11 py-[15px] rounded-full border border-[#D4AF37]/50 hover:border-[#D4AF37]/90 active:scale-[0.98] transition-all duration-700 whitespace-nowrap"
+        role="button"
+        className="group relative overflow-hidden inline-flex items-center justify-center min-h-[52px] px-14 py-4 rounded-full border border-[#D4AF37]/50 hover:border-[#D4AF37]/90 active:scale-[0.98] transition-all duration-700 whitespace-nowrap"
       >
         {/*
          * Liquid fill — starts at 0% height from bottom, floods to 100% on hover.
@@ -33,24 +34,25 @@ export default function HeroCTA() {
         <span className="absolute inset-0 -z-10 rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-[#D4AF37]" />
 
         <span
-          className="relative font-sans font-light uppercase tracking-[0.2em] text-[#D4AF37] group-hover:text-[#08080A] transition-colors duration-500 mr-[-0.2em]"
-          style={{ fontSize: "11px", lineHeight: 1 }}
+          className="relative font-sans font-light uppercase tracking-[0.2em] text-[#D4AF37] group-hover:text-[#08080A] transition-colors duration-500 mr-[-0.2em] inline-block leading-none"
+          style={{ fontSize: "11px" }}
         >
           Book Your Story
         </span>
       </Link>
 
       {/* ── Dot separator ── */}
-      <span className="hidden sm:inline-block mx-2 w-[4px] h-[4px] rounded-full bg-[#D4AF37]/40 flex-shrink-0" />
+      <span className="hidden sm:inline-block mx-1 w-[4px] h-[4px] rounded-full bg-[#D4AF37]/40 flex-shrink-0" />
 
       {/* ── Secondary text link ── */}
       <Link
         href="/#films"
         id="hero-cta-secondary"
-        className="group relative flex items-center justify-center min-h-[44px] px-5 py-2 gap-3 active:scale-[0.98] transition-transform duration-200"
+        role="button"
+        className="group relative inline-flex items-center justify-center min-h-[52px] px-6 py-4 gap-3 active:scale-[0.98] transition-transform duration-200"
       >
         <span
-          className="font-sans font-light uppercase tracking-[0.2em] text-white/35 group-hover:text-white/70 transition-colors duration-500"
+          className="font-sans font-light uppercase tracking-[0.2em] text-white/35 group-hover:text-white/70 transition-colors duration-500 mr-[-0.2em] inline-block leading-none"
           style={{ fontSize: "11px" }}
         >
           View Films
