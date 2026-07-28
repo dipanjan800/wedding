@@ -21,8 +21,14 @@ function SplitReveal({
       {words.map((word, i) => (
         <span
           key={i}
-          className="overflow-hidden inline-block"
-          style={{ perspective: "1200px", marginRight: i < words.length - 1 ? "0.28em" : 0 }}
+          className="overflow-hidden inline-block align-bottom"
+          style={{
+            perspective: "1200px",
+            marginRight: i < words.length - 1 ? "0.28em" : 0,
+            paddingBottom: "0.25em",
+            marginBottom: "-0.25em",
+            paddingRight: "0.05em",
+          }}
         >
           <motion.span
             initial={{ y: "105%", opacity: 0, rotateX: 20 }}
@@ -67,14 +73,14 @@ export default function HeroText() {
       {/* ── Main Headline ── */}
       <h1
         className="font-serif mb-10"
-        style={{ lineHeight: 0.88 }}
+        style={{ lineHeight: 1.02 }}
       >
         {/*
          * Line 1 — "Luxury" in ultra-light italic at massive scale.
          * Weight contrast with Line 2 is the primary editorial gesture.
          */}
         <span
-          className="block italic font-light tracking-[0.06em] text-[#F7F6F3]/90"
+          className="block italic font-light tracking-[0.06em] text-[#F7F6F3]/90 pb-2"
           style={{ fontSize: "clamp(3.8rem, 10.5vw, 10.5rem)" }}
         >
           <SplitReveal text="Luxury" delay={0.82} />
@@ -85,7 +91,7 @@ export default function HeroText() {
          * Sits closer to Line 1 via negative margin for typographic density.
          */}
         <span
-          className="block font-semibold tracking-[-0.01em] mt-[-0.05em]"
+          className="block font-semibold tracking-[-0.01em] pb-3"
           style={{
             fontSize: "clamp(2.6rem, 7vw, 7rem)",
             background:
