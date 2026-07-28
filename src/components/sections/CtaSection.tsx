@@ -76,7 +76,7 @@ export default function CtaSection() {
           >
             <div
               className="w-full bg-[#08080A] rounded-full flex items-center justify-center gap-3 transition-colors duration-500 group-hover:bg-transparent"
-              style={{ paddingLeft: "60px", paddingRight: "60px", paddingTop: "16px", paddingBottom: "16px" }}
+              style={{ paddingLeft: "30px", paddingRight: "30px", paddingTop: "12px", paddingBottom: "12px" }}
             >
               <Calendar className="w-4 h-4 text-[#D4AF37] group-hover:text-[#08080A] transition-colors duration-500" />
               <span className="font-sans font-light uppercase tracking-[0.22em] text-xs text-white group-hover:text-[#08080A] transition-colors duration-500 font-medium whitespace-nowrap">
@@ -89,7 +89,7 @@ export default function CtaSection() {
           <a
             href="#films"
             className="w-full sm:w-auto rounded-full border border-white/20 hover:border-[#D4AF37]/50 bg-white/[0.02] hover:bg-white/[0.06] text-white/80 hover:text-white transition-all duration-500 flex items-center justify-center gap-3 font-sans font-light uppercase tracking-[0.22em] text-xs whitespace-nowrap"
-            style={{ paddingLeft: "60px", paddingRight: "60px", paddingTop: "16px", paddingBottom: "16px" }}
+            style={{ paddingLeft: "30px", paddingRight: "30px", paddingTop: "12px", paddingBottom: "12px" }}
           >
             <Film className="w-4 h-4 text-[#D4AF37]" />
             <span>Watch Our Films</span>
