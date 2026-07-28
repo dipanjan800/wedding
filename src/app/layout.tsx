@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import LenisProvider from "@/components/common/LenisProvider";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -61,6 +62,7 @@ export default function RootLayout({
         <LenisProvider />
         <Navbar />
         <main>{children}</main>
+        <ScrollToTop />
       </body>
     </html>
   );
