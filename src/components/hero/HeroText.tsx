@@ -25,9 +25,10 @@ function SplitReveal({
           style={{
             perspective: "1200px",
             marginRight: i < words.length - 1 ? "0.28em" : 0,
-            paddingBottom: "0.25em",
-            marginBottom: "-0.25em",
-            paddingRight: "0.05em",
+            paddingBottom: "0.45em",
+            marginBottom: "-0.45em",
+            paddingTop: "0.1em",
+            paddingRight: "0.1em",
           }}
         >
           <motion.span
@@ -39,7 +40,10 @@ function SplitReveal({
               ease: [0.16, 1, 0.3, 1],
             }}
             className="inline-block"
-            style={{ willChange: "transform, opacity" }}
+            style={{
+              willChange: "transform, opacity",
+              paddingBottom: "0.2em",
+            }}
           >
             {word}
           </motion.span>
@@ -72,8 +76,8 @@ export default function HeroText() {
 
       {/* ── Main Headline ── */}
       <h1
-        className="font-serif mb-10"
-        style={{ lineHeight: 1.02 }}
+        className="font-serif mb-8"
+        style={{ lineHeight: 1.12 }}
       >
         {/*
          * Line 1 — "Luxury" in ultra-light italic at massive scale.
@@ -91,9 +95,10 @@ export default function HeroText() {
          * Sits closer to Line 1 via negative margin for typographic density.
          */}
         <span
-          className="block font-semibold tracking-[-0.01em] pb-3"
+          className="block font-semibold tracking-[-0.01em] pb-4"
           style={{
             fontSize: "clamp(2.6rem, 7vw, 7rem)",
+            lineHeight: 1.15,
             background:
               "linear-gradient(110deg, #B8962E 0%, #D4AF37 30%, #F0D697 55%, #D4AF37 75%, #B8962E 100%)",
             WebkitBackgroundClip: "text",
