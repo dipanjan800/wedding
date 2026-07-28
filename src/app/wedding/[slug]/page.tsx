@@ -50,8 +50,52 @@ export default async function WeddingProjectPage({
     (p) => p.type === project.type && p.slug !== project.slug
   ).slice(0, 3);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://royalvowscinema.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Weddings",
+        item: "https://royalvowscinema.com/#weddings",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.couple,
+        item: `https://royalvowscinema.com/wedding/${project.slug}`,
+      },
+    ],
+  };
+
+  const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: `${project.couple} — ${project.location}`,
+    description: project.excerpt,
+    locationCreated: project.location,
+    dateCreated: project.year,
+    creator: {
+      "@type": "Organization",
+      name: "Royal Vows Cinema",
+    },
+  };
+
   return (
     <article aria-label={`${project.couple} — ${project.location}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([breadcrumbJsonLd, creativeWorkJsonLd]),
+        }}
+      />
       {/* ① Full-screen hero image */}
       <ProjectHero project={project} />
 

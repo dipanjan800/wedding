@@ -59,6 +59,7 @@ export default function BookingSection() {
     message: "",
   });
 
+  const [honeypot, setHoneypot] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
@@ -88,6 +89,8 @@ export default function BookingSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Silent rejection if honeypot is filled by bot
+    if (honeypot.trim() !== "") return;
     if (!validateForm()) return;
 
     setSubmitting(true);
@@ -227,6 +230,18 @@ export default function BookingSection() {
                     <div className="border-b border-white/10 pb-4 mb-6">
                       <h3 className="font-serif text-2xl text-white font-light">Reservation Inquiry</h3>
                       <p className="font-sans text-xs text-white/40 uppercase tracking-widest mt-1">All details strictly confidential</p>
+                    </div>
+
+                    {/* Honeypot field — anti-spam bot trap */}
+                    <div className="hidden" aria-hidden="true">
+                      <input
+                        type="text"
+                        name="website_url_hp"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
                     </div>
 
                     {/* Row 1: Bride & Groom Names */}

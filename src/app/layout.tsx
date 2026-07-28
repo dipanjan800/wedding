@@ -5,6 +5,7 @@ import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import LenisProvider from "@/components/common/LenisProvider";
 import ScrollToTop from "@/components/common/ScrollToTop";
+import SkipToContent from "@/components/common/SkipToContent";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -57,28 +58,53 @@ export const metadata: Metadata = {
   },
 };
 
-/** Schema.org Organization structured data for rich search results */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Royal Vows Cinema",
-  description:
-    "Award-winning luxury Indian wedding photography and cinematic filmmaking studio.",
-  url: "https://royalvowscinema.com",
-  foundingDate: "2014",
-  areaServed: "Worldwide",
-  knowsAbout: [
-    "Wedding Photography",
-    "Wedding Videography",
-    "Cinematic Wedding Films",
-    "Pre-Wedding Photography",
-    "Destination Wedding Photography",
-  ],
-  sameAs: [
-    "https://www.instagram.com/royalvows.cinema",
-    "https://www.youtube.com/@royalvowscinema",
-  ],
-};
+/** Schema.org Organization & LocalBusiness structured data for rich search results */
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Royal Vows Cinema",
+    description:
+      "Award-winning luxury Indian wedding photography and cinematic filmmaking studio.",
+    url: "https://royalvowscinema.com",
+    foundingDate: "2014",
+    areaServed: "Worldwide",
+    knowsAbout: [
+      "Wedding Photography",
+      "Wedding Videography",
+      "Cinematic Wedding Films",
+      "Pre-Wedding Photography",
+      "Destination Wedding Photography",
+    ],
+    sameAs: [
+      "https://www.instagram.com/royalvows.cinema",
+      "https://www.youtube.com/@royalvowscinema",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Royal Vows Cinema Atelier",
+    image: "https://royalvowscinema.com/og-image.jpg",
+    telephone: "+91 98765 43210",
+    email: "concierge@royalvowscinema.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Taj Palace Enclave, Diplomatic Enclave",
+      addressLocality: "New Delhi",
+      addressRegion: "Delhi",
+      postalCode: "110021",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "28.5954",
+      longitude: "77.1729",
+    },
+    url: "https://royalvowscinema.com",
+    priceRange: "$$$$",
+  },
+];
 
 export default function RootLayout({
   children,
@@ -95,9 +121,10 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#08080A] text-[#F7F6F3] antialiased overflow-x-hidden">
+        <SkipToContent />
         <LenisProvider />
         <Navbar />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <ScrollToTop />
       </body>
