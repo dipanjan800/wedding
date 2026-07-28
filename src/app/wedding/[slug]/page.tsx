@@ -81,7 +81,7 @@ export default async function WeddingProjectPage({
     name: `${project.couple} — ${project.location}`,
     description: project.excerpt,
     locationCreated: project.location,
-    dateCreated: project.year,
+    dateCreated: project.date,
     creator: {
       "@type": "Organization",
       name: "Royal Vows Cinema",
