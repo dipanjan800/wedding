@@ -6,8 +6,10 @@ import { registerGSAP, gsap } from "@/lib/gsap-register";
 interface SectionEyebrowProps {
   /** Chapter number label, e.g. "01" */
   index?: string;
+  number?: string;
   /** Short label text, e.g. "About the Studio" */
-  label: string;
+  label?: string;
+  title?: string;
   /** Framer-free — uses GSAP. Delay in seconds for stagger. */
   delay?: number;
 }
@@ -16,8 +18,10 @@ interface SectionEyebrowProps {
  * Reusable section eyebrow — gold rule + chapter index + label.
  * Consistent across all non-hero sections.
  */
-export default function SectionEyebrow({ index, label, delay = 0 }: SectionEyebrowProps) {
+export default function SectionEyebrow({ index, number, label, title, delay = 0 }: SectionEyebrowProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const displayIndex = index ?? number;
+  const displayLabel = label ?? title ?? "";
 
   useEffect(() => {
     registerGSAP();
@@ -57,12 +61,12 @@ export default function SectionEyebrow({ index, label, delay = 0 }: SectionEyebr
       />
 
       {/* Chapter number */}
-      {index && (
+      {displayIndex && (
         <span
           className="font-sans font-light text-[#D4AF37]/50"
           style={{ fontSize: "10px", letterSpacing: "0.3em" }}
         >
-          {index}
+          {displayIndex}
         </span>
       )}
 
@@ -71,7 +75,7 @@ export default function SectionEyebrow({ index, label, delay = 0 }: SectionEyebr
         className="font-sans font-light uppercase text-white/40"
         style={{ fontSize: "10px", letterSpacing: "0.34em" }}
       >
-        {label}
+        {displayLabel}
       </span>
     </div>
   );
