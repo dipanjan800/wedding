@@ -9,13 +9,13 @@ export default function HeroCTA() {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 2.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-0 mt-11"
+      className="relative z-10 flex flex-col sm:flex-row items-center gap-5 sm:gap-6 mt-11"
     >
       {/* ── Primary CTA — ghost button with liquid gold fill ── */}
       <Link
         href="/#booking"
         id="hero-cta-primary"
-        className="group relative overflow-hidden flex items-center justify-center min-h-[44px] px-8 py-[14px] rounded-full border border-[#D4AF37]/45 hover:border-[#D4AF37]/80 active:scale-[0.98] transition-all duration-700"
+        className="group relative overflow-hidden flex items-center justify-center min-h-[44px] px-9 py-[14px] rounded-full border border-[#D4AF37]/45 hover:border-[#D4AF37]/80 active:scale-[0.98] transition-all duration-700"
       >
         {/*
          * Liquid fill — starts at 0% height from bottom, floods to 100% on hover.
@@ -40,14 +40,14 @@ export default function HeroCTA() {
         </span>
       </Link>
 
-      {/* ── Dot separator (desktop) ── */}
-      <span className="hidden sm:inline-block mx-6 w-[3px] h-[3px] rounded-full bg-white/20 flex-shrink-0" />
+      {/* ── Dot separator ── */}
+      <span className="hidden sm:inline-block mx-2 w-[4px] h-[4px] rounded-full bg-[#D4AF37]/40 flex-shrink-0" />
 
       {/* ── Secondary text link ── */}
       <Link
         href="/#films"
         id="hero-cta-secondary"
-        className="group relative flex items-center justify-center min-h-[44px] px-4 py-2 gap-3 active:scale-[0.98] transition-transform duration-200"
+        className="group relative flex items-center justify-center min-h-[44px] px-5 py-2 gap-3 active:scale-[0.98] transition-transform duration-200"
       >
         <span
           className="font-sans font-light uppercase tracking-[0.2em] text-white/35 group-hover:text-white/70 transition-colors duration-500"
