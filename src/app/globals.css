@@ -159,12 +159,17 @@ body {
   border-radius: 4px;
 }
 
-/* Tactile button active scale & minimum touch target (WCAG 2.2 AA) */
+/* Tactile button active scale & flex alignment (maintains exact vertical padding) */
 button,
 a[role="button"],
 .btn-touch {
-  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   touch-action: manipulation;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 button:active,

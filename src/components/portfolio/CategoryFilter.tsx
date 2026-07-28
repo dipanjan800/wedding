@@ -51,20 +51,20 @@ export default function CategoryFilter({ active, onChange }: CategoryFilterProps
             onMouseLeave={() => setHovered(null)}
             className="relative flex-shrink-0 inline-flex items-center justify-center focus-visible:outline-none active:scale-[0.97]"
             style={{
-              padding: "8px 18px",
-              minHeight: "44px",
-              fontSize: "9.5px",
+              padding: "10px 20px",
+              fontSize: "10px",
               letterSpacing: "0.22em",
               fontFamily: "var(--font-sans)",
               fontWeight: 300,
               textTransform: "uppercase",
               cursor: "pointer",
-              borderRadius: "2px",
+              borderRadius: "4px",
+              lineHeight: 1,
               color: isActive
                 ? "#08080A"
                 : isHovered
-                ? "rgba(247,246,243,0.85)"
-                : "rgba(247,246,243,0.45)",
+                ? "rgba(247,246,243,0.9)"
+                : "rgba(247,246,243,0.5)",
               transition: "color 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.15s ease",
               zIndex: 1,
             }}
