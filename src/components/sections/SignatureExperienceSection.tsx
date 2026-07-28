@@ -262,7 +262,7 @@ function SignatureHeading() {
   const ref = useScrollReveal<HTMLDivElement>({ y: 36, start: "top 82%" });
 
   return (
-    <div ref={ref} className="opacity-0 mb-16 lg:mb-20">
+    <div ref={ref} className="opacity-0 mb-20 lg:mb-28">
       <SectionEyebrow index="02" label="The Signature Experience" />
 
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">

@@ -75,11 +75,10 @@ export default function CtaSection() {
             className="w-full sm:w-auto relative group overflow-hidden rounded-full bg-gradient-to-r from-[#B8962E] via-[#D4AF37] to-[#F0D697] p-px transition-all duration-500 hover:shadow-[0_0_50px_rgba(212,175,55,0.4)]"
           >
             <div
-              className="w-full bg-[#08080A] rounded-full flex items-center justify-center gap-3 transition-colors duration-500 group-hover:bg-transparent"
-              style={{ paddingLeft: "30px", paddingRight: "30px", paddingTop: "12px", paddingBottom: "12px" }}
+              className="w-full bg-[#08080A] rounded-full flex items-center justify-center gap-3 transition-colors duration-500 group-hover:bg-transparent px-8 py-3.5"
             >
               <Calendar className="w-4 h-4 text-[#D4AF37] group-hover:text-[#08080A] transition-colors duration-500" />
-              <span className="font-sans font-light uppercase tracking-[0.22em] text-xs text-white group-hover:text-[#08080A] transition-colors duration-500 font-medium whitespace-nowrap">
+              <span className="font-sans font-light uppercase tracking-[0.22em] text-xs text-white group-hover:text-[#08080A] transition-colors duration-500 font-medium whitespace-nowrap pl-[0.22em]">
                 Book Your Wedding
               </span>
             </div>
@@ -88,11 +87,10 @@ export default function CtaSection() {
           {/* Secondary Button — Watch Our Films */}
           <a
             href="#films"
-            className="w-full sm:w-auto rounded-full border border-white/20 hover:border-[#D4AF37]/50 bg-white/[0.02] hover:bg-white/[0.06] text-white/80 hover:text-white transition-all duration-500 flex items-center justify-center gap-3 font-sans font-light uppercase tracking-[0.22em] text-xs whitespace-nowrap"
-            style={{ paddingLeft: "30px", paddingRight: "30px", paddingTop: "12px", paddingBottom: "12px" }}
+            className="w-full sm:w-auto rounded-full border border-white/20 hover:border-[#D4AF37]/50 bg-white/[0.02] hover:bg-white/[0.06] text-white/80 hover:text-white transition-all duration-500 flex items-center justify-center gap-3 font-sans font-light uppercase tracking-[0.22em] text-xs whitespace-nowrap px-8 py-3.5"
           >
             <Film className="w-4 h-4 text-[#D4AF37]" />
-            <span>Watch Our Films</span>
+            <span className="pl-[0.22em]">Watch Our Films</span>
           </a>
         </motion.div>
 
