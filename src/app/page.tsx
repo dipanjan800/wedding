@@ -12,10 +12,13 @@ import ContactSection from "@/components/sections/ContactSection";
 import FaqSection from "@/components/sections/FaqSection";
 import InstagramSection from "@/components/sections/InstagramSection";
 import CtaSection from "@/components/sections/CtaSection";
+import GlobalCanvasScrubberWrapper from "@/components/common/GlobalCanvasScrubberWrapper";
 
 export default function Home() {
   return (
     <>
+      {/* ─── Global Background Scrubber ─── */}
+      <GlobalCanvasScrubberWrapper />
       {/* ─── §01: Hero — Scroll-Controlled Cinematic Video ─── */}
       <HeroSection />
 

@@ -1,21 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
 import HeroText from "./HeroText";
 import HeroCTA from "./HeroCTA";
 import ScrollIndicator from "@/components/common/ScrollIndicator";
 import { registerGSAP } from "@/lib/gsap-register";
-
-// Dynamic import — prevents SSR issues with GSAP/video
-const HeroVideoScrubber = dynamic(() => import("./HeroVideoScrubber"), {
-  ssr: false,
-});
-
-const VIDEO_SRC = "/video/hero-cinematic.mp4";
-
-// 300vh of scroll travel drives the full video duration
-const HERO_SCROLL_HEIGHT = "300vh";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -25,30 +14,12 @@ export default function HeroSection() {
   }, []);
 
   return (
-    /*
-     * Architecture:
-     * ├── outer section (300vh) — scroll travel container
-     * └── sticky inner (100vh) — locked viewport while scrolling
-     *     ├── Video layer (scroll-scrubbed via GSAP)
-     *     ├── Cinematic grade overlays (4 layers)
-     *     ├── Film grain SVG texture
-     *     ├── Hero content (text + CTA, centered)
-     *     ├── Bottom edge details
-     *     └── Scroll indicator
-     */
     <section
       ref={sectionRef}
-      className="relative"
-      style={{ height: HERO_SCROLL_HEIGHT }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Cinematic Hero — Royal Vows Cinema"
     >
-      {/* Sticky viewport */}
-      <div className="sticky top-0 w-full h-screen overflow-hidden">
-
-        {/* ── 1. Video Layer ── */}
-        <HeroVideoScrubber videoSrc={VIDEO_SRC} />
-
-        {/* ── 2. Cinematic Film Grade Overlays ── */}
+      {/* ── 1. Cinematic Film Grade Overlays ── */}
 
         {/*
          * [A] Primary luminosity veil — dark canvas centre-weighted.
@@ -180,7 +151,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-      </div>
     </section>
   );
 }

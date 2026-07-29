@@ -97,6 +97,15 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────
+   GLOBAL SECTION TRANSPARENCY FOR VIDEO BACKGROUND
+───────────────────────────────────────────────────────────────── */
+#main-content > section {
+  background-color: rgba(8, 8, 10, 0.6) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ─────────────────────────────────────────────────────────────────
    TYPOGRAPHY UTILITIES
 ───────────────────────────────────────────────────────────────── */
 .font-serif  { font-family: var(--font-serif); }
