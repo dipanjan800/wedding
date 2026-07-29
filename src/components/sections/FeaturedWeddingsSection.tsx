@@ -117,7 +117,8 @@ export default function FeaturedWeddingsSection() {
         {/* ── Header ── */}
         <div
           ref={headingRef}
-          className="opacity-0 mb-5"
+          className="opacity-0"
+          style={{ marginBottom: "48px" }}
         >
           <SectionEyebrow index="03" label="Featured Weddings" />
           <h2
@@ -149,7 +150,8 @@ export default function FeaturedWeddingsSection() {
         {/* ── Subheading + filter row ── */}
         <div
           ref={filterRef}
-          className="opacity-0 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-16 lg:mb-20"
+          className="opacity-0 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6"
+          style={{ marginBottom: "clamp(4rem, 8vw, 6rem)" }}
         >
           {/* Subheading — editorial lead text */}
           <p

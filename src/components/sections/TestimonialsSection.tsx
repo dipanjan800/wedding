@@ -91,7 +91,7 @@ function TestimonialCard({
       <div
         className="flex flex-col h-full"
         style={{
-          padding: "clamp(1.75rem, 3vw, 2.5rem)",
+          padding: "40px",
           background: "rgba(247,246,243,0.02)",
           border: hovered
             ? "1px solid rgba(212,175,55,0.22)"
@@ -105,7 +105,7 @@ function TestimonialCard({
         }}
       >
         {/* ── Opening quote mark ── */}
-        <div className="mb-6 flex-shrink-0">
+        <div className="flex-shrink-0" style={{ marginBottom: "24px" }}>
           <span
             className="font-serif"
             style={{
@@ -123,8 +123,9 @@ function TestimonialCard({
 
         {/* ── Pull quote — editorial centrepiece ── */}
         <blockquote
-          className="font-serif font-light flex-1 mb-8"
+          className="font-serif font-light flex-1"
           style={{
+            marginBottom: "32px",
             fontSize: "clamp(1.05rem, 1.5vw, 1.35rem)",
             lineHeight: 1.55,
             letterSpacing: "-0.01em",
@@ -276,7 +277,8 @@ export default function TestimonialsSection() {
         {/* ── Subline + rating summary ── */}
         <div
           ref={subRef}
-          className="opacity-0 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-16 lg:mb-20"
+          className="opacity-0 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4"
+          style={{ marginBottom: "80px" }}
         >
           <p
             className="font-sans font-light"

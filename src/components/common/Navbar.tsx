@@ -98,7 +98,14 @@ export default function Navbar() {
           : "bg-transparent"
       )}
     >
-      <nav className="mx-auto max-w-[1600px] px-6 md:px-10 xl:px-16 h-[72px] flex items-center justify-between">
+      <nav 
+        className="mx-auto h-[72px] flex items-center justify-between w-full"
+        style={{
+          maxWidth: "1600px",
+          paddingLeft: "clamp(1.5rem, 5vw, 5rem)",
+          paddingRight: "clamp(1.5rem, 5vw, 5rem)",
+        }}
+      >
 
         {/* ── Logo ── */}
         <Link href="/" className="group flex items-center gap-3.5">
@@ -124,7 +131,7 @@ export default function Navbar() {
         </Link>
 
         {/* ── Desktop Navigation ── */}
-        <ul className="hidden lg:flex items-center gap-7">
+        <ul className="!hidden md:!flex items-center gap-7">
           {NAV_LINKS.map(({ label, href }) => (
             <li key={label}>
               <Link
@@ -144,15 +151,15 @@ export default function Navbar() {
         <Link
           href="/#booking"
           id="nav-inquire"
-          className="hidden lg:inline-flex items-center px-5 py-[9px] rounded-full border border-white/15 text-white/55 font-sans font-light uppercase hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition-all duration-500"
-          style={{ fontSize: "10px", letterSpacing: "0.22em" }}
+          className="hidden md:inline-flex items-center justify-center rounded-full bg-[#D4AF37] text-[#08080A] font-sans font-semibold uppercase hover:bg-transparent hover:border-[#D4AF37] hover:text-[#D4AF37] border border-transparent transition-all duration-500"
+          style={{ fontSize: "10px", letterSpacing: "0.22em", padding: "10px 28px" }}
         >
-          Inquire
+          <span className="pl-[0.22em]">Inquire</span>
         </Link>
 
         {/* ── Mobile hamburger (strictly hidden on desktop) ── */}
         <button
-          className="lg:hidden flex flex-col justify-center gap-[6px] w-8 h-8 focus-visible:outline-none"
+          className="!flex md:!hidden flex-col justify-center gap-[6px] w-8 h-8 focus-visible:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation"
           aria-expanded={menuOpen}
@@ -183,7 +190,7 @@ export default function Navbar() {
         initial={false}
         animate={{ height: menuOpen ? "auto" : 0, opacity: menuOpen ? 1 : 0 }}
         transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-        className="lg:hidden overflow-hidden bg-[rgba(6,6,8,0.97)] backdrop-blur-[40px]"
+        className="md:!hidden overflow-hidden bg-[rgba(6,6,8,0.97)] backdrop-blur-[40px]"
       >
         <ul className="px-6 py-8 flex flex-col gap-5">
           {NAV_LINKS.map(({ label, href }, i) => (

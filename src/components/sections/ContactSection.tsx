@@ -28,15 +28,19 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative bg-[#0F0F13] py-24 md:py-36 border-t border-white/[0.06] overflow-hidden"
+      className="relative bg-[#0F0F13] border-t border-white/[0.06] overflow-hidden"
+      style={{ paddingTop: "80px", paddingBottom: "80px" }}
     >
       {/* Background radial ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#D4AF37]/[0.02] rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12 xl:px-20 relative z-10">
+      <div 
+        className="mx-auto max-w-[1600px] relative z-10"
+        style={{ paddingLeft: "clamp(1.5rem, 5vw, 5rem)", paddingRight: "clamp(1.5rem, 5vw, 5rem)" }}
+      >
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 md:mb-20">
+        <div className="max-w-3xl" style={{ marginBottom: "80px" }}>
           <SectionEyebrow title="Studio Headquarters" number="11" />
           <h2
             className="font-serif font-light text-white tracking-tight leading-[1.08] mt-4"
@@ -44,7 +48,7 @@ export default function ContactSection() {
           >
             Connect With <span className="italic text-gold-gradient font-normal">Our Atelier</span>
           </h2>
-          <p className="font-sans font-light text-white/60 text-base md:text-lg mt-5 leading-relaxed">
+          <p className="font-sans font-light text-white/60 text-base md:text-lg leading-relaxed" style={{ marginTop: "20px" }}>
             Whether inquiring about dates or scheduling a private penthouse consultation in Delhi, our directors are at your service.
           </p>
         </div>
@@ -56,12 +60,12 @@ export default function ContactSection() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             
             {/* Address */}
-            <div className="sm:col-span-2 rounded-2xl bg-white/[0.02] border border-white/10 p-6 md:p-8 backdrop-blur-xl hover:border-[#D4AF37]/30 transition-all duration-500 group">
-              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform duration-500">
+            <div className="sm:col-span-2 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-xl hover:border-[#D4AF37]/30 transition-all duration-500 group" style={{ padding: "32px" }}>
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] group-hover:scale-110 transition-transform duration-500" style={{ marginBottom: "20px" }}>
                 <MapPin className="w-5 h-5" />
               </div>
-              <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block mb-1">Main Atelier</span>
-              <h3 className="font-serif text-xl text-white font-light mb-2">Studio Address</h3>
+              <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block" style={{ marginBottom: "4px" }}>Main Atelier</span>
+              <h3 className="font-serif text-xl text-white font-light" style={{ marginBottom: "8px" }}>Studio Address</h3>
               <p className="font-sans text-sm text-white/60 font-light leading-relaxed">
                 {STUDIO_CONTACT.address}
               </p>
@@ -70,17 +74,18 @@ export default function ContactSection() {
             {/* Direct Phone & WhatsApp */}
             <a
               href={`tel:${STUDIO_CONTACT.phoneRaw}`}
-              className="rounded-2xl bg-white/[0.02] border border-white/10 p-6 backdrop-blur-xl hover:border-[#D4AF37]/30 transition-all duration-500 group flex flex-col justify-between"
+              className="rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-xl hover:border-[#D4AF37]/30 transition-all duration-500 group flex flex-col justify-between"
+              style={{ padding: "24px" }}
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform duration-500">
+                <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] group-hover:scale-110 transition-transform duration-500" style={{ marginBottom: "20px" }}>
                   <Phone className="w-5 h-5" />
                 </div>
-                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block mb-1">Direct Line</span>
-                <h3 className="font-serif text-xl text-white font-light mb-1">Call Us</h3>
+                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block" style={{ marginBottom: "4px" }}>Direct Line</span>
+                <h3 className="font-serif text-xl text-white font-light" style={{ marginBottom: "4px" }}>Call Us</h3>
                 <p className="font-sans text-sm text-white/70 font-light">{STUDIO_CONTACT.phone}</p>
               </div>
-              <div className="mt-4 flex items-center gap-1 text-xs text-[#D4AF37] opacity-60 group-hover:opacity-100 transition-opacity">
+              <div className="flex items-center gap-1 text-xs text-[#D4AF37] opacity-60 group-hover:opacity-100 transition-opacity" style={{ marginTop: "16px" }}>
                 <span>Call Studio</span> <ArrowUpRight className="w-3.5 h-3.5" />
               </div>
             </a>
@@ -88,17 +93,18 @@ export default function ContactSection() {
             {/* Email */}
             <a
               href={`mailto:${STUDIO_CONTACT.email}`}
-              className="rounded-2xl bg-white/[0.02] border border-white/10 p-6 backdrop-blur-xl hover:border-[#D4AF37]/30 transition-all duration-500 group flex flex-col justify-between"
+              className="rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-xl hover:border-[#D4AF37]/30 transition-all duration-500 group flex flex-col justify-between"
+              style={{ padding: "24px" }}
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform duration-500">
+                <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] group-hover:scale-110 transition-transform duration-500" style={{ marginBottom: "20px" }}>
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block mb-1">Email Inquiry</span>
-                <h3 className="font-serif text-xl text-white font-light mb-1">Write To Us</h3>
+                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block" style={{ marginBottom: "4px" }}>Email Inquiry</span>
+                <h3 className="font-serif text-xl text-white font-light" style={{ marginBottom: "4px" }}>Write To Us</h3>
                 <p className="font-sans text-sm text-white/70 font-light truncate">{STUDIO_CONTACT.email}</p>
               </div>
-              <div className="mt-4 flex items-center gap-1 text-xs text-[#D4AF37] opacity-60 group-hover:opacity-100 transition-opacity">
+              <div className="flex items-center gap-1 text-xs text-[#D4AF37] opacity-60 group-hover:opacity-100 transition-opacity" style={{ marginTop: "16px" }}>
                 <span>Send Email</span> <ArrowUpRight className="w-3.5 h-3.5" />
               </div>
             </a>
@@ -108,27 +114,28 @@ export default function ContactSection() {
               href={STUDIO_CONTACT.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-2xl bg-white/[0.02] border border-white/10 p-6 backdrop-blur-xl hover:border-[#D4AF37]/30 transition-all duration-500 group flex flex-col justify-between"
+              className="rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-xl hover:border-[#D4AF37]/30 transition-all duration-500 group flex flex-col justify-between"
+              style={{ padding: "24px" }}
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform duration-500">
+                <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] group-hover:scale-110 transition-transform duration-500" style={{ marginBottom: "20px" }}>
                   <MessageSquare className="w-5 h-5" />
                 </div>
-                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block mb-1">Instant Messaging</span>
-                <h3 className="font-serif text-xl text-white font-light mb-1">WhatsApp Concierge</h3>
+                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block" style={{ marginBottom: "4px" }}>Instant Messaging</span>
+                <h3 className="font-serif text-xl text-white font-light" style={{ marginBottom: "4px" }}>WhatsApp Concierge</h3>
                 <p className="font-sans text-sm text-white/70 font-light">{STUDIO_CONTACT.whatsapp}</p>
               </div>
-              <div className="mt-4 flex items-center gap-1 text-xs text-[#D4AF37] opacity-60 group-hover:opacity-100 transition-opacity">
+              <div className="flex items-center gap-1 text-xs text-[#D4AF37] opacity-60 group-hover:opacity-100 transition-opacity" style={{ marginTop: "16px" }}>
                 <span>Start Chat</span> <ArrowUpRight className="w-3.5 h-3.5" />
               </div>
             </a>
 
             {/* Socials (Instagram & YouTube) */}
-            <div className="rounded-2xl bg-white/[0.02] border border-white/10 p-6 backdrop-blur-xl flex flex-col justify-between">
+            <div className="rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-xl flex flex-col justify-between" style={{ padding: "24px" }}>
               <div>
-                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block mb-1">Social Channels</span>
-                <h3 className="font-serif text-xl text-white font-light mb-4">Follow Our Work</h3>
-                <div className="space-y-3">
+                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] block" style={{ marginBottom: "4px" }}>Social Channels</span>
+                <h3 className="font-serif text-xl text-white font-light" style={{ marginBottom: "16px" }}>Follow Our Work</h3>
+                <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   <a
                     href={STUDIO_CONTACT.instagramUrl}
                     target="_blank"
@@ -154,14 +161,14 @@ export default function ContactSection() {
           </div>
 
           {/* RIGHT 5 COLS — Google Maps Luxury Card */}
-          <div className="lg:col-span-5 rounded-2xl bg-white/[0.02] border border-white/10 p-6 md:p-8 backdrop-blur-xl flex flex-col justify-between relative overflow-hidden min-h-[400px]">
+          <div className="lg:col-span-5 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-xl flex flex-col justify-between relative overflow-hidden min-h-[400px]" style={{ padding: "32px" }}>
             {/* Header info inside map card */}
-            <div className="flex items-center justify-between mb-4 z-10 relative">
+            <div className="flex items-center justify-between z-10 relative" style={{ marginBottom: "16px" }}>
               <div className="flex items-center gap-2 text-[#D4AF37]">
                 <Compass className="w-4 h-4 animate-spin-slow" />
                 <span className="font-sans text-xs uppercase tracking-widest text-white/80">Atelier Coordinates</span>
               </div>
-              <span className="font-mono text-xs text-[#F0D697] bg-[#D4AF37]/10 px-2.5 py-1 rounded-full border border-[#D4AF37]/20">
+              <span className="font-mono text-xs text-[#F0D697] bg-[#D4AF37]/10 rounded-full border border-[#D4AF37]/20" style={{ padding: "4px 10px" }}>
                 {STUDIO_CONTACT.coordinates}
               </span>
             </div>
@@ -179,7 +186,7 @@ export default function ContactSection() {
             </div>
 
             {/* Footer action inside map card */}
-            <div className="mt-4 flex items-center justify-between z-10 relative pt-2">
+            <div className="flex items-center justify-between z-10 relative" style={{ marginTop: "16px", paddingTop: "8px" }}>
               <span className="font-sans text-xs text-white/50">Taj Palace Enclave, Diplomatic Enclave</span>
               <a
                 href="https://maps.google.com/?q=Taj+Palace+New+Delhi"

@@ -19,24 +19,28 @@ export default function InstagramSection() {
   return (
     <section
       id="instagram"
-      className="relative bg-[#0F0F13] py-24 md:py-36 border-t border-white/[0.06] overflow-hidden"
+      className="relative bg-[#0F0F13] border-t border-white/[0.06] overflow-hidden"
+      style={{ paddingTop: "80px", paddingBottom: "80px" }}
     >
       {/* Background ambient radial lighting */}
       <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-[#D4AF37]/[0.02] rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12 xl:px-20 relative z-10">
+      <div 
+        className="mx-auto max-w-[1600px] relative z-10"
+        style={{ paddingLeft: "clamp(1.5rem, 5vw, 5rem)", paddingRight: "clamp(1.5rem, 5vw, 5rem)" }}
+      >
         
         {/* Header with CTA Link */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between" style={{ marginBottom: "80px", gap: "32px" }}>
           <div className="max-w-2xl">
             <SectionEyebrow title="Editorial Gallery" number="13" />
             <h2
-              className="font-serif font-light text-white tracking-tight leading-[1.08] mt-4"
-              style={{ fontSize: "clamp(2.4rem, 4.5vw, 4.2rem)" }}
+              className="font-serif font-light text-white tracking-tight leading-[1.08]"
+              style={{ fontSize: "clamp(2.4rem, 4.5vw, 4.2rem)", marginTop: "16px" }}
             >
               Instagram <span className="italic text-gold-gradient font-normal">Curations</span>
             </h2>
-            <p className="font-sans font-light text-white/60 text-base md:text-lg mt-4 leading-relaxed">
+            <p className="font-sans font-light text-white/60 text-base md:text-lg leading-relaxed" style={{ marginTop: "16px" }}>
               A daily stream of golden hour light, couture bridal moments, and behind-the-lens stories.
             </p>
           </div>
@@ -45,7 +49,8 @@ export default function InstagramSection() {
             href={STUDIO_CONTACT.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.03] border border-white/15 hover:border-[#D4AF37]/50 text-white/80 hover:text-[#D4AF37] transition-all duration-500 group text-xs uppercase tracking-widest font-sans font-light"
+            className="inline-flex items-center rounded-full bg-white/[0.03] border border-white/15 hover:border-[#D4AF37]/50 text-white/80 hover:text-[#D4AF37] transition-all duration-500 group text-xs uppercase tracking-widest font-sans font-light"
+            style={{ padding: "12px 24px", gap: "12px" }}
           >
             <InstagramIcon className="w-4 h-4 text-[#D4AF37]" />
             <span>Follow {STUDIO_CONTACT.instagram}</span>
@@ -54,7 +59,7 @@ export default function InstagramSection() {
         </div>
 
         {/* 6-Grid Square Placeholders */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "24px" }}>
           {INSTAGRAM_POSTS.map((post) => (
             <a
               key={post.id}
@@ -83,26 +88,26 @@ export default function InstagramSection() {
               </div>
 
               {/* Hover Full Reveal Overlay */}
-              <div className="ig-overlay absolute inset-0 bg-[rgba(8,8,10,0.85)] backdrop-blur-md p-8 flex flex-col justify-between z-20">
+              <div className="ig-overlay absolute inset-0 bg-[rgba(8,8,10,0.85)] backdrop-blur-md flex flex-col justify-between z-20" style={{ padding: "32px" }}>
                 <div className="flex items-center justify-between text-xs text-[#D4AF37]">
-                  <span className="flex items-center gap-1.5">
+                  <span className="flex items-center" style={{ gap: "6px" }}>
                     <InstagramIcon className="w-4 h-4" /> @royalvows.cinema
                   </span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </div>
 
-                <div className="space-y-3">
+                <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37]">
                     {post.tag}
                   </span>
                   <h3 className="font-serif text-2xl text-white font-light leading-snug">
                     {post.title}
                   </h3>
-                  <div className="flex items-center gap-6 text-xs text-white/70 font-sans font-light pt-2 border-t border-white/10">
-                    <span className="flex items-center gap-1.5">
+                  <div className="flex items-center text-xs text-white/70 font-sans font-light border-t border-white/10" style={{ gap: "24px", paddingTop: "8px" }}>
+                    <span className="flex items-center" style={{ gap: "6px" }}>
                       <Heart className="w-4 h-4 text-[#D4AF37]" /> {post.likes}
                     </span>
-                    <span className="flex items-center gap-1.5">
+                    <span className="flex items-center" style={{ gap: "6px" }}>
                       <MessageCircle className="w-4 h-4 text-[#D4AF37]" /> {post.comments}
                     </span>
                   </div>

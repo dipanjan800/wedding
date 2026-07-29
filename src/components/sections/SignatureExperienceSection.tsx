@@ -155,8 +155,9 @@ function StepCard({ step, index }: { step: typeof STEPS[number]; index: number }
     >
       {/* Card body */}
       <div
-        className="relative flex flex-col h-full p-8 transition-colors duration-700"
+        className="relative flex flex-col h-full transition-colors duration-700"
         style={{
+          padding: "32px",
           background: "rgba(15, 15, 19, 0.6)",
           borderRadius: "16px",
           border: "1px solid rgba(255,255,255,0.055)",
@@ -174,7 +175,7 @@ function StepCard({ step, index }: { step: typeof STEPS[number]; index: number }
         />
 
         {/* Chapter index */}
-        <div className="flex items-start justify-between mb-7">
+        <div className="flex items-start justify-between" style={{ marginBottom: "28px" }}>
           <span
             className="font-serif italic"
             style={{
@@ -198,8 +199,9 @@ function StepCard({ step, index }: { step: typeof STEPS[number]; index: number }
 
         {/* Title */}
         <h3
-          className="font-serif font-light mb-4 group-hover:text-[#F0D697] transition-colors duration-500"
+          className="font-serif font-light group-hover:text-[#F0D697] transition-colors duration-500"
           style={{
+            marginBottom: "16px",
             fontSize: "clamp(1.15rem, 1.8vw, 1.5rem)",
             lineHeight: 1.15,
             color: "#F7F6F3",
@@ -223,8 +225,9 @@ function StepCard({ step, index }: { step: typeof STEPS[number]; index: number }
 
         {/* Bottom connector line — shown on hover */}
         <div
-          className="mt-8 h-px origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+          className="h-px origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
           style={{
+            marginTop: "32px",
             background: "linear-gradient(to right, #D4AF37, rgba(212,175,55,0.1))",
           }}
         />
@@ -262,7 +265,7 @@ function SignatureHeading() {
   const ref = useScrollReveal<HTMLDivElement>({ y: 36, start: "top 82%" });
 
   return (
-    <div ref={ref} className="opacity-0 mb-20 lg:mb-28">
+    <div ref={ref} className="opacity-0" style={{ marginBottom: "clamp(4rem, 8vw, 7rem)" }}>
       <SectionEyebrow index="02" label="The Signature Experience" />
 
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">

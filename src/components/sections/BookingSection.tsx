@@ -14,10 +14,10 @@ const EVENT_TYPES = [
 ];
 
 const BUDGET_RANGES = [
-  "$15,000 – $30,000",
-  "$30,000 – $60,000",
-  "$60,000 – $100,000",
-  "$100,000+",
+  "₹10,00,000 – ₹25,00,000",
+  "₹25,00,000 – ₹50,00,000",
+  "₹50,00,000 – ₹1,00,00,000",
+  "₹1,00,00,000+",
 ];
 
 const SERVICE_OPTIONS = [
@@ -103,16 +103,20 @@ export default function BookingSection() {
   return (
     <section
       id="booking"
-      className="relative bg-[#08080A] py-24 md:py-36 border-t border-white/[0.06] overflow-hidden"
+      className="relative bg-[#08080A] border-t border-white/[0.06] overflow-hidden"
+      style={{ paddingTop: "144px", paddingBottom: "144px" }}
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#D4AF37]/[0.03] rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-[600px] h-[600px] bg-[#B8962E]/[0.025] rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12 xl:px-20 relative z-10">
+      <div 
+        className="mx-auto max-w-[1600px] relative z-10"
+        style={{ paddingLeft: "clamp(1.5rem, 5vw, 5rem)", paddingRight: "clamp(1.5rem, 5vw, 5rem)" }}
+      >
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 md:mb-24">
+        <div className="max-w-3xl" style={{ marginBottom: "96px" }}>
           <SectionEyebrow title="Bespoke Commission" number="10" />
           <h2
             className="font-serif font-light text-white tracking-tight leading-[1.08] mt-4"
@@ -120,7 +124,10 @@ export default function BookingSection() {
           >
             Begin Your <span className="italic text-gold-gradient font-normal">Legacy Story</span>
           </h2>
-          <p className="font-sans font-light text-white/60 text-base md:text-lg mt-6 leading-relaxed max-w-2xl">
+          <p
+            className="font-sans font-light text-white/60 text-base md:text-lg leading-relaxed max-w-2xl"
+            style={{ marginTop: "24px" }}
+          >
             We limit our global commissions to 15 couples annually. Each film and photograph is meticulously crafted with absolute artistic devotion to your heritage.
           </p>
         </div>
@@ -129,9 +136,9 @@ export default function BookingSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* LEFT SIDE — Editorial Content & Status */}
-          <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-10">
+          <div className="lg:col-span-5 flex flex-col" style={{ gap: "40px" }}>
             <div>
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#F0D697] text-xs font-sans tracking-widest uppercase mb-6">
+              <span className="inline-flex items-center rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#F0D697] text-xs font-sans tracking-widest uppercase" style={{ gap: "8px", padding: "6px 14px", marginBottom: "24px" }}>
                 <Sparkles className="w-3.5 h-3.5" /> Private Commissions 2025/2026
               </span>
 
@@ -139,13 +146,13 @@ export default function BookingSection() {
                 An Intimate, Uncompromised Cinematic Experience
               </h3>
 
-              <p className="font-sans font-light text-white/55 text-sm md:text-base leading-relaxed mb-8">
+              <p className="font-sans font-light text-white/55 text-sm md:text-base leading-relaxed" style={{ marginBottom: "32px" }}>
                 Your wedding isn't just an event; it's a monumental chapter in your family lineage. From Lake Como châteaux to Rajasthan palaces, our team brings discretion, editorial grace, and high-fidelity 4K cinematography to your celebration.
               </p>
 
               {/* Status Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/10 backdrop-blur-md">
+              <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "16px", marginBottom: "32px" }}>
+                <div className="rounded-xl bg-white/[0.02] border border-white/10 backdrop-blur-md" style={{ padding: "16px" }}>
                   <div className="flex items-center gap-3 text-[#D4AF37] mb-1.5">
                     <Calendar className="w-4 h-4" />
                     <span className="font-sans text-xs tracking-wider uppercase text-white/80 font-medium">Availability</span>
@@ -154,7 +161,7 @@ export default function BookingSection() {
                   <p className="font-sans text-[11px] text-white/40 mt-0.5">2025/2026 Season</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/10 backdrop-blur-md">
+                <div className="rounded-xl bg-white/[0.02] border border-white/10 backdrop-blur-md" style={{ padding: "16px" }}>
                   <div className="flex items-center gap-3 text-[#D4AF37] mb-1.5">
                     <Clock className="w-4 h-4" />
                     <span className="font-sans text-xs tracking-wider uppercase text-white/80 font-medium">Response Time</span>
@@ -166,7 +173,7 @@ export default function BookingSection() {
             </div>
 
             {/* Cinematic Image / Illustration Placeholder */}
-            <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-gradient-to-br from-[#14141A] via-[#0F0F13] to-[#08080A] p-8 md:p-10 shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-gradient-to-br from-[#14141A] via-[#0F0F13] to-[#08080A] shadow-2xl" style={{ padding: "32px" }}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
               
               {/* Gold Filigree Line */}
@@ -190,7 +197,7 @@ export default function BookingSection() {
 
           {/* RIGHT SIDE — Luxury Booking Form */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-2xl bg-white/[0.02] border border-white/10 p-6 md:p-10 lg:p-12 backdrop-blur-2xl shadow-2xl">
+            <div className="relative rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-2xl shadow-2xl" style={{ padding: "48px" }}>
               
               <AnimatePresence mode="wait">
                 {submitted ? (
@@ -226,7 +233,7 @@ export default function BookingSection() {
                     </button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                     <div className="border-b border-white/10 pb-4 mb-6">
                       <h3 className="font-serif text-2xl text-white font-light">Reservation Inquiry</h3>
                       <p className="font-sans text-xs text-white/40 uppercase tracking-widest mt-1">All details strictly confidential</p>
@@ -245,7 +252,7 @@ export default function BookingSection() {
                     </div>
 
                     {/* Row 1: Bride & Groom Names */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "20px" }}>
                       <div className="lux-field">
                         <input
                           type="text"
@@ -278,7 +285,7 @@ export default function BookingSection() {
                     </div>
 
                     {/* Row 2: Email & Phone */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "20px" }}>
                       <div className="lux-field">
                         <input
                           type="email"
@@ -317,7 +324,7 @@ export default function BookingSection() {
                     </div>
 
                     {/* Row 3: Wedding Date & Location */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "20px" }}>
                       <div className="lux-field">
                         <input
                           type="date"
@@ -356,7 +363,7 @@ export default function BookingSection() {
                     </div>
 
                     {/* Row 4: Event Type & Budget Selects */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "20px" }}>
                       <div className="lux-field lux-select-wrap">
                         <select
                           id="eventType"
@@ -395,11 +402,11 @@ export default function BookingSection() {
                     </div>
 
                     {/* Row 5: Services Required (Pills) */}
-                    <div className="space-y-2 pt-2">
+                    <div style={{ display: "flex", flexDirection: "column", gap: "12px", paddingTop: "8px" }}>
                       <label className="font-sans text-[11px] uppercase tracking-widest text-white/50 block">
                         Services Required
                       </label>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap" style={{ gap: "8px" }}>
                         {SERVICE_OPTIONS.map((srv) => {
                           const active = formData.services.includes(srv);
                           return (
@@ -407,11 +414,12 @@ export default function BookingSection() {
                               type="button"
                               key={srv}
                               onClick={() => handleServiceToggle(srv)}
-                              className={`px-3.5 py-1.5 rounded-full text-xs font-sans transition-all duration-300 ${
+                              className={`rounded-full text-xs font-sans transition-all duration-300 ${
                                 active
                                   ? "bg-[#D4AF37]/20 border border-[#D4AF37] text-[#F0D697]"
                                   : "bg-white/[0.03] border border-white/10 text-white/60 hover:border-white/25 hover:text-white"
                               }`}
+                              style={{ padding: "6px 14px" }}
                             >
                               {srv}
                             </button>
@@ -421,13 +429,13 @@ export default function BookingSection() {
                     </div>
 
                     {/* Row 6: Preferred Contact Method */}
-                    <div className="space-y-2 pt-2">
+                    <div style={{ display: "flex", flexDirection: "column", gap: "12px", paddingTop: "8px" }}>
                       <label className="font-sans text-[11px] uppercase tracking-widest text-white/50 block">
                         Preferred Contact Method
                       </label>
-                      <div className="flex items-center gap-6">
+                      <div className="flex items-center" style={{ gap: "24px" }}>
                         {CONTACT_METHODS.map((method) => (
-                          <label key={method} className="flex items-center gap-2 cursor-pointer group">
+                          <label key={method} className="flex items-center cursor-pointer group" style={{ gap: "8px" }}>
                             <input
                               type="radio"
                               name="contactMethod"
@@ -463,13 +471,14 @@ export default function BookingSection() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full relative group overflow-hidden rounded-lg bg-gradient-to-r from-[#B8962E] via-[#D4AF37] to-[#F0D697] p-px transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] mt-6"
+                      className="w-full relative group overflow-hidden rounded-lg bg-gradient-to-r from-[#B8962E] via-[#D4AF37] to-[#F0D697] transition-all duration-500 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
+                      style={{ marginTop: "24px", padding: "1px" }}
                     >
-                      <div className="w-full py-4 bg-[#08080A] rounded-[7px] flex items-center justify-center gap-3 transition-colors duration-500 group-hover:bg-transparent">
-                        <span className="font-sans font-light uppercase tracking-[0.22em] text-xs text-white group-hover:text-[#08080A] transition-colors duration-500 font-medium">
+                      <div className="w-full bg-transparent group-hover:bg-[#08080A] rounded-[7px] flex items-center justify-center transition-colors duration-500" style={{ padding: "16px 0", gap: "12px" }}>
+                        <span className="font-sans font-light uppercase tracking-[0.22em] text-xs text-[#08080A] group-hover:text-white transition-colors duration-500 font-medium">
                           {submitting ? "Processing..." : "Begin Your Story"}
                         </span>
-                        <ArrowRight className="w-4 h-4 text-[#D4AF37] group-hover:text-[#08080A] transition-transform duration-500 group-hover:translate-x-1" />
+                        <ArrowRight className="w-4 h-4 text-[#08080A] group-hover:text-[#D4AF37] transition-transform duration-500 group-hover:translate-x-1" />
                       </div>
                     </button>
                   </form>

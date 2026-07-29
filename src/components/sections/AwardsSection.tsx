@@ -143,7 +143,7 @@ function GoldSeparator() {
   return (
     <div
       ref={lineRef}
-      className="flex items-center gap-4 my-16 lg:my-20"
+      className="flex items-center gap-4"
       style={{ opacity: 0, transformOrigin: "center" }}
     >
       <div
@@ -218,7 +218,7 @@ export default function AwardsSection() {
         }}
       >
         {/* ── Heading ── */}
-        <div ref={headingRef} className="opacity-0 mb-5">
+        <div ref={headingRef} className="opacity-0" style={{ marginBottom: "24px" }}>
           <SectionEyebrow index="07" label="Awards & Recognition" />
           <h2
             className="font-serif font-light"
@@ -249,7 +249,8 @@ export default function AwardsSection() {
         {/* ── Subline ── */}
         <div
           ref={subRef}
-          className="opacity-0 mb-16 lg:mb-20"
+          className="opacity-0"
+          style={{ marginBottom: "80px" }}
         >
           <p
             className="font-sans font-light"
@@ -267,17 +268,19 @@ export default function AwardsSection() {
         </div>
 
         {/* ── Featured On ── */}
-        <div ref={featuredLabelRef} className="opacity-0 mb-10">
-          <span
-            className="font-sans font-light uppercase"
-            style={{
-              fontSize: "8px",
-              letterSpacing: "0.38em",
-              color: "rgba(247,246,243,0.2)",
-            }}
-          >
-            Featured On
-          </span>
+        <div style={{ paddingBottom: "24px" }}>
+          <div ref={featuredLabelRef} className="opacity-0">
+            <span
+              className="font-sans font-light uppercase"
+              style={{
+                fontSize: "8px",
+                letterSpacing: "0.38em",
+                color: "rgba(247,246,243,0.2)",
+              }}
+            >
+              Featured On
+            </span>
+          </div>
         </div>
 
         <div
@@ -290,20 +293,24 @@ export default function AwardsSection() {
         </div>
 
         {/* ── Divider ── */}
-        <GoldSeparator />
+        <div style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+          <GoldSeparator />
+        </div>
 
         {/* ── Awards ── */}
-        <div ref={awardsLabelRef} className="opacity-0 mb-10">
-          <span
-            className="font-sans font-light uppercase"
-            style={{
-              fontSize: "8px",
-              letterSpacing: "0.38em",
-              color: "rgba(247,246,243,0.2)",
-            }}
-          >
-            Honours & Awards
-          </span>
+        <div style={{ paddingBottom: "24px" }}>
+          <div ref={awardsLabelRef} className="opacity-0">
+            <span
+              className="font-sans font-light uppercase"
+              style={{
+                fontSize: "8px",
+                letterSpacing: "0.38em",
+                color: "rgba(247,246,243,0.2)",
+              }}
+            >
+              Honours & Awards
+            </span>
+          </div>
         </div>
 
         <div

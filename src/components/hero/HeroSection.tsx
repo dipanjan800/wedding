@@ -146,9 +146,9 @@ export default function HeroSection() {
             />
           </div>
 
-          <div className="mx-auto max-w-[1600px] px-6 md:px-10 xl:px-16 pb-6 flex items-center justify-between">
+          <div className="mx-auto max-w-[1600px] px-6 md:px-10 xl:px-16 pb-6 flex items-center justify-between w-full">
             {/* Left — stat */}
-            <div className="flex items-baseline gap-2">
+            <div className="flex items-baseline gap-2 flex-1">
               <span
                 className="font-serif italic text-[#D4AF37]/50"
                 style={{ fontSize: "18px", lineHeight: 1 }}
@@ -164,15 +164,19 @@ export default function HeroSection() {
             </div>
 
             {/* Centre — scroll indicator */}
-            <ScrollIndicator />
+            <div className="flex-1 flex justify-center">
+              <ScrollIndicator />
+            </div>
 
             {/* Right — location */}
-            <span
-              className="font-sans font-light uppercase text-white/30"
-              style={{ fontSize: "9px", letterSpacing: "0.28em" }}
-            >
-              Est. 2016
-            </span>
+            <div className="flex-1 flex justify-end">
+              <span
+                className="font-sans font-light uppercase text-white/30"
+                style={{ fontSize: "9px", letterSpacing: "0.28em" }}
+              >
+                Est. 2016
+              </span>
+            </div>
           </div>
         </div>
 

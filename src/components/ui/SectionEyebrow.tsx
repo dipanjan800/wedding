@@ -50,7 +50,7 @@ export default function SectionEyebrow({ index, number, label, title, delay = 0 
   }, [delay]);
 
   return (
-    <div ref={ref} className="flex items-center gap-4 mb-8 opacity-0">
+    <div ref={ref} className="flex items-center opacity-0" style={{ gap: "16px", marginBottom: "32px" }}>
       {/* Left rule */}
       <span
         className="h-px flex-shrink-0"

@@ -16,7 +16,8 @@ export default function HeroCTA() {
         href="/#booking"
         id="hero-cta-primary"
         role="button"
-        className="group relative overflow-hidden inline-flex items-center justify-center rounded-full border border-[#D4AF37]/60 hover:border-[#D4AF37] active:scale-[0.98] transition-all duration-700 whitespace-nowrap px-8 py-3.5 min-h-[44px]"
+        className="group relative overflow-hidden inline-flex items-center justify-center rounded-full border border-[#D4AF37]/60 hover:border-[#D4AF37] active:scale-[0.98] transition-all duration-700 whitespace-nowrap flex-shrink-0"
+        style={{ padding: "14px 36px", minHeight: "48px" }}
       >
         {/*
          * Liquid fill — starts at 0% height from bottom, floods to 100% on hover.
@@ -41,24 +42,22 @@ export default function HeroCTA() {
         </span>
       </Link>
 
-      {/* ── Dot separator ── */}
-      <span className="hidden sm:inline-block mx-1 w-[4px] h-[4px] rounded-full bg-[#D4AF37]/40 flex-shrink-0" />
-
       {/* ── Secondary text link ── */}
       <Link
         href="/#films"
         id="hero-cta-secondary"
         role="button"
-        className="group relative inline-flex items-center justify-center min-h-[52px] px-6 py-4 gap-3 active:scale-[0.98] transition-transform duration-200"
+        className="group relative inline-flex items-center justify-center gap-3 active:scale-[0.98] transition-transform duration-200 flex-shrink-0"
+        style={{ padding: "14px 24px", minHeight: "48px" }}
       >
         <span
-          className="font-sans font-light uppercase tracking-[0.2em] text-white/35 group-hover:text-white/70 transition-colors duration-500 pl-[0.2em] inline-block leading-none"
+          className="font-sans font-light uppercase tracking-[0.2em] text-white/40 group-hover:text-white/80 transition-colors duration-500 pl-[0.2em] inline-block leading-none"
           style={{ fontSize: "11px" }}
         >
           View Films
         </span>
         {/* Expanding gold underline */}
-        <span className="block h-px w-0 group-hover:w-6 bg-gradient-to-r from-[#D4AF37] to-transparent transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 h-px w-0 group-hover:w-[60%] bg-[#D4AF37]/60 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
       </Link>
     </motion.div>
   );

@@ -15,15 +15,19 @@ export default function FaqSection() {
   return (
     <section
       id="faq"
-      className="relative bg-[#08080A] py-24 md:py-36 border-t border-white/[0.06] overflow-hidden"
+      className="relative bg-[#08080A] border-t border-white/[0.06] overflow-hidden"
+      style={{ paddingTop: "80px", paddingBottom: "80px" }}
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#D4AF37]/[0.025] rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12 xl:px-20 relative z-10">
+      <div 
+        className="mx-auto max-w-[1600px] relative z-10"
+        style={{ paddingLeft: "clamp(1.5rem, 5vw, 5rem)", paddingRight: "clamp(1.5rem, 5vw, 5rem)" }}
+      >
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 md:mb-24">
+        <div className="max-w-3xl" style={{ marginBottom: "96px" }}>
           <SectionEyebrow title="Curated Clarity" number="12" />
           <h2
             className="font-serif font-light text-white tracking-tight leading-[1.08] mt-4"
@@ -31,13 +35,13 @@ export default function FaqSection() {
           >
             Frequently Asked <span className="italic text-gold-gradient font-normal">Questions</span>
           </h2>
-          <p className="font-sans font-light text-white/60 text-base md:text-lg mt-5 leading-relaxed">
+          <p className="font-sans font-light text-white/60 text-base md:text-lg leading-relaxed" style={{ marginTop: "20px" }}>
             Everything you need to know about our commissioning process, international travel logistics, heirloom deliverables, and crew scaling.
           </p>
         </div>
 
         {/* Accordion Layout */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto" style={{ display: "flex", flexDirection: "column", gap: "16px", margin: "0 auto" }}>
           {FAQ_ITEMS.map((item, index) => {
             const isOpen = openId === item.id;
             return (
@@ -52,9 +56,10 @@ export default function FaqSection() {
                 <button
                   onClick={() => toggleFaq(item.id)}
                   aria-expanded={isOpen}
-                  className="w-full text-left p-6 md:p-8 flex items-center justify-between gap-6 cursor-pointer group"
+                  className="w-full text-left flex items-center cursor-pointer group"
+                  style={{ padding: "32px", gap: "24px", justifyContent: "space-between" }}
                 >
-                  <div className="flex items-center gap-4 md:gap-6">
+                  <div className="flex items-center" style={{ gap: "24px" }}>
                     <span className="font-serif text-[#D4AF37] text-lg md:text-xl font-light opacity-60 group-hover:opacity-100 transition-opacity">
                       0{index + 1}
                     </span>
@@ -74,8 +79,8 @@ export default function FaqSection() {
 
                 {/* FAQ Body — CSS Grid Smooth Heights */}
                 <div className={`faq-body ${isOpen ? "open" : ""}`}>
-                  <div className="faq-body-inner px-6 md:px-8 pb-8 pt-0">
-                    <div className="pl-10 md:pl-12 border-l border-[#D4AF37]/30">
+                  <div className="faq-body-inner" style={{ padding: "0 32px 32px 32px" }}>
+                    <div className="border-l border-[#D4AF37]/30" style={{ paddingLeft: "48px" }}>
                       <p className="font-sans font-light text-white/70 text-sm md:text-base leading-relaxed">
                         {item.answer}
                       </p>
@@ -88,9 +93,9 @@ export default function FaqSection() {
         </div>
 
         {/* Supporting FAQ Footer note */}
-        <div className="mt-16 text-center max-w-md mx-auto p-6 rounded-2xl bg-white/[0.015] border border-white/10 backdrop-blur-md">
-          <HelpCircle className="w-6 h-6 text-[#D4AF37] mx-auto mb-2" />
-          <p className="font-sans text-xs text-white/60 font-light mb-3">
+        <div className="text-center max-w-md mx-auto rounded-2xl bg-white/[0.015] border border-white/10 backdrop-blur-md" style={{ margin: "40px auto 0 auto", padding: "24px" }}>
+          <HelpCircle className="w-6 h-6 text-[#D4AF37]" style={{ margin: "0 auto 8px auto", display: "block" }} />
+          <p className="font-sans text-xs text-white/60 font-light" style={{ marginBottom: "12px" }}>
             Have a custom request or multi-day royal itinerary?
           </p>
           <a

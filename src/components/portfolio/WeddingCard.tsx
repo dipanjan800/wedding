@@ -125,8 +125,9 @@ export default function WeddingCard({
           {/* ── Accolade badge — top left ── */}
           {project.accolade && (
             <div
-              className="absolute top-5 left-5 z-10 px-3 py-1.5"
+              className="absolute top-5 left-5 z-10"
               style={{
+                padding: "6px 12px",
                 background: "rgba(8,8,10,0.55)",
                 border: "1px solid rgba(212,175,55,0.28)",
                 backdropFilter: "blur(12px)",
@@ -218,8 +219,8 @@ export default function WeddingCard({
 
             {/* Bottom meta row */}
             <div
-              className="flex items-center justify-between pt-3"
-              style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+              className="flex items-center justify-between"
+              style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "12px" }}
             >
               <span
                 className="font-sans font-light"

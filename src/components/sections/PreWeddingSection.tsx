@@ -432,7 +432,8 @@ export default function PreWeddingSection() {
         {/* Subline + drag hint row */}
         <div
           ref={subRef}
-          className="opacity-0 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-14 lg:mb-16"
+          className="opacity-0 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4"
+          style={{ marginBottom: "64px" }}
         >
           <p
             className="font-sans font-light"
