@@ -130,7 +130,7 @@ export default function GlobalCanvasScrubber() {
         }
       });
       
-      scrollTriggerInstance = tl.scrollTrigger;
+      scrollTriggerInstance = tl.scrollTrigger || null;
     };
 
     // Handle resizes
