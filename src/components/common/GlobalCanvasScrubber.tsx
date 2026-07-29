@@ -28,14 +28,14 @@ export default function GlobalCanvasScrubber() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // 1. Preload all images
+    // 1. Preload images
     let loadedCount = 0;
     const images: HTMLImageElement[] = [];
 
     const checkLoaded = () => {
       loadedCount++;
-      if (loadedCount === FRAME_COUNT) {
-        imagesRef.current = images;
+      // Start animation as soon as we have the first frame!
+      if (loadedCount === 1) {
         setLoaded(true);
         initAnimation();
       }
@@ -47,19 +47,23 @@ export default function GlobalCanvasScrubber() {
       img.onload = checkLoaded;
       img.onerror = () => {
         console.error("Failed to load frame", i);
-        checkLoaded(); // Still count it so we don't hang
+        // Don't hang if an image fails
       };
       images.push(img);
     }
+    
+    // Save images to ref immediately so renderFrame can use whatever is available
+    imagesRef.current = images;
 
     let scrollTriggerInstance: ReturnType<typeof ScrollTrigger.create> | null = null;
     let resizeObserver: ResizeObserver | null = null;
+    let tl: gsap.core.Timeline | null = null;
 
     const renderFrame = (index: number) => {
       if (!canvas || !ctx || !imagesRef.current[index]) return;
 
       const img = imagesRef.current[index];
-      // Skip if image is broken
+      // Skip if image is broken or not yet loaded
       if (!img.complete || img.naturalWidth === 0) return;
       
       // Calculate object-cover dimensions
@@ -111,7 +115,7 @@ export default function GlobalCanvasScrubber() {
       const sequence = { frame: 0 };
 
       // We animate the frame property on scroll
-      const tl = gsap.timeline({
+      tl = gsap.timeline({
         scrollTrigger: {
           trigger: document.body, // The full body scroll!
           start: "top top",
@@ -139,6 +143,7 @@ export default function GlobalCanvasScrubber() {
 
     return () => {
       if (scrollTriggerInstance) scrollTriggerInstance.kill();
+      if (tl) tl.kill();
       resizeObserver?.disconnect();
     };
   }, []);
